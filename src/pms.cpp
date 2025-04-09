@@ -30,7 +30,7 @@ void Guest::showInfo() {
     std::cout << "Номер телефона: " << this->phone << std::endl;
     std::cout << "Email: " << this->email << std::endl;
     std::cout << "Номер паспорта: " << this->passport << std::endl;
-    std::cout << "Дата рождения: " << this->date.getDateStr() << std::endl;
+    std::cout << "Дата рождения: " << this->date.toString() << std::endl;
     std::cout << "Бонусы: " << this->loyalPoint << std::endl;
     std::cout << std::endl;
 }
@@ -56,16 +56,3 @@ Guest::Guest(
     this->loyalPoint = loyalPoint;
 }
 
-void DateTime::string_to_date(std::string str) {
-    std::stringstream ss(str);
-
-    char delim;
-    ss >> this->day >> delim;
-    ss >> this->month >> delim;
-    ss >> this->year >> delim;
-    
-}
-
-std::string DateTime::getDateStr() {
-    return std::to_string(this->day) + '.' + std::to_string(this->month) + '.' + std::to_string(this->year);
-}
